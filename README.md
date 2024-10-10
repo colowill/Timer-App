@@ -12,3 +12,8 @@ Prerequisites:
 
 	•	Java JDK 8 or higher must be installed on your system.
 	•	Git should be installed if you want to clone the project directly from GitHub.
+
+Project Goals:
+
+	•	Create an additional feature: the alarm system, which takes into account the system's time
+	•	Create a logo for TimeWizard!
