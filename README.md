@@ -15,5 +15,5 @@ Prerequisites:
 
 Project Goals:
 
-	•	Create an additional feature: the alarm system, which takes into account the system's time
+	•	Create an additional feature: the alarm system, which allows the user to set habitual alarms at certain times in the day (considering the system's time).
 	•	Create a logo for TimeWizard!
