@@ -10,5 +10,5 @@ Features:
 
 Prerequisites:
 
-	•	Java JDK 8 or higher must be installed on your system. You can download it from here.
+	•	Java JDK 8 or higher must be installed on your system.
 	•	Git should be installed if you want to clone the project directly from GitHub.
