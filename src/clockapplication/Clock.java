@@ -20,7 +20,7 @@ import javax.swing.*;
  */
 public class Clock implements ActionListener {
 
-    // Mane components of the GUI
+    // Main components of the GUI
     JFrame frame0 = new JFrame();
     JLabel timeLabel1 = new JLabel();
     JLabel image = new JLabel();
@@ -168,6 +168,14 @@ public class Clock implements ActionListener {
         frame0.setLayout(null);
         frame0.setResizable(false);
         frame0.setVisible(true);
+        
+        toggleBtn.setBackground(Color.decode("#c2bbea"));
+        startBtn.setBackground(Color.decode("#c2bbea"));
+        resetBtn.setBackground(Color.decode("#c2bbea"));
+        soundMenu.setBackground(Color.decode("#c2bbea"));
+        frame0.getContentPane().setBackground(Color.decode("#c2bbea"));
+        
+   
     }
     
     // Function to start the timer
@@ -180,7 +188,7 @@ public class Clock implements ActionListener {
     void stop() {
         timer.stop();
         started=false;
-        reset();
+        if (timerMode) reset();
     }
     
     // Resets the time back to 0

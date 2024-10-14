@@ -13,28 +13,29 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  *
  * @author 2headaxe
  */
+
+
 public class Sound {
+    
     
     private Clip clip;
     
     public void playSound(String soundFileName, boolean loop) {
         try {
-            /*
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("/Users/2headaxe/Documents/NetBeansProjects/ClockApplication/src/" + soundFileName).getAbsoluteFile());
-            */
+            
             InputStream audioSrc = getClass().getResourceAsStream("/" + soundFileName);
             InputStream bufferedIn = new java.io.BufferedInputStream(audioSrc);
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(bufferedIn);
             clip = AudioSystem.getClip();
             clip.open(audioStream);
-            clip.setFramePosition(0); // Start from the beginning
+            clip.setFramePosition(0); 
             if (loop) {
-                clip.loop(Clip.LOOP_CONTINUOUSLY); // Loop continuously
+                clip.loop(Clip.LOOP_CONTINUOUSLY); 
             } else {
                 clip.start();
             }
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+            
         }
     }
     
