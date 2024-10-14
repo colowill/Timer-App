@@ -184,7 +184,7 @@ public class Clock implements ActionListener {
         started=true;
     }
     
-    // Stops the timer and sets time back to 0 using the reset() method
+    // Stops the timer and sets time back to 0 using the reset() method depnding on if its set to timermode or not
     void stop() {
         timer.stop();
         started=false;
