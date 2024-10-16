@@ -17,3 +17,5 @@ Project Goals:
 
 	•	Create an additional feature: the alarm system, which allows the user to set habitual alarms at certain times in the day (considering the system's time).
 	•	Create a logo for TimeWizard!
+
+<img width="361" alt="Screenshot 2024-10-15 at 9 04 07 PM" src="https://github.com/user-attachments/assets/68d9e7f9-c512-41ac-b774-5eee14f3cfef">
