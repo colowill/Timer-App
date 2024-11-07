@@ -23,7 +23,6 @@ public class Clock implements ActionListener {
     // Main components of the GUI
     JFrame frame0 = new JFrame();
     JLabel timeLabel1 = new JLabel();
-    JLabel image = new JLabel();
     
     // Sound files for alarm options and their names
     String[] soundFiles = {"alarm_beep.wav","air_raid.wav","airplane_chime.wav","cuckoo_clock.wav"};
@@ -71,18 +70,19 @@ public class Clock implements ActionListener {
     timePassed, which basically acts as a stopwatch. It then calculates each passing second, minute, and hour, and updates
     the String variables and timeLabel1 JFrame. In alarm mode, when time = 0 an alarm sound is played.
     */
-    Timer timer = new Timer(100, new ActionListener() {
+    Timer timer = new Timer(50, new ActionListener() {
     
         public void actionPerformed(ActionEvent e) {
             
         if (timePassed>=0) {
             if (!timerMode) {
-                timePassed+=100;
+                timePassed+=50;
             }
             else {
-                timePassed-=100;
+                timePassed-=50;
                 if (timePassed==0 && timerMode) {
                     sound.playSound(soundFiles[soundMenu.getSelectedIndex()],true);
+                    timePassed=0;
                 }
             }
         if (timePassed<0) {
@@ -108,13 +108,13 @@ public class Clock implements ActionListener {
         timeLabel1.setHorizontalAlignment(JTextField.CENTER);
         
         // Start button setup
-        startBtn.setBounds(60,205,100,50);
+        startBtn.setBounds(60,245,100,50);
         startBtn.setFont(new Font("Verdana",Font.PLAIN,18));
         startBtn.setFocusable(false);
         startBtn.addActionListener(this);
         
         // Reset button setup
-        resetBtn.setBounds(200,205,100,50);
+        resetBtn.setBounds(200,245,100,50);
         resetBtn.setFont(new Font("Verdana",Font.PLAIN,18));
         resetBtn.setFocusable(false);
         resetBtn.addActionListener(this);
@@ -136,21 +136,24 @@ public class Clock implements ActionListener {
         minAdd.setBounds(105,25,150,50);
         minAdd.setVisible(true);
         
-        int xBoundSub = 100;
+        // Loop to handle all button info as an array of buttons
+        // X boundary is incrimented by 55 for each loop
+        int xBoundSub = 95;
         int xBoundAdd = xBoundSub;
         for (int i = 0; i < btnArray.length; i ++) {
             if (i<3) {
-                btnArray[i].setBounds(xBoundAdd,55,20,20);
-                btnArray[i].setFont(new Font("Verdana",Font.PLAIN,8));
+                btnArray[i].setBounds(xBoundAdd,45,30,30);
+                btnArray[i].setFont(new Font("Verdana",Font.PLAIN,11));
                 btnArray[i].setVisible(false);
                 btnArray[i].addActionListener(this);
                 frame0.add(btnArray[i]);
                 xBoundAdd+=55;
             } else {
-                btnArray[i].setBounds(xBoundSub,165,20,20);
-                btnArray[i].setFont(new Font("Verdana",Font.PLAIN,8));
+                btnArray[i].setBounds(xBoundSub,165,30,30);
+                btnArray[i].setFont(new Font("Verdana",Font.PLAIN,11));
                 btnArray[i].setVisible(false);
                 btnArray[i].addActionListener(this);
+                btnArray[i].setBackground(Color.black);
                 frame0.add(btnArray[i]);
                 xBoundSub+=55;
             }
@@ -188,7 +191,7 @@ public class Clock implements ActionListener {
     void stop() {
         timer.stop();
         started=false;
-        if (timerMode) reset();
+        
     }
     
     // Resets the time back to 0
